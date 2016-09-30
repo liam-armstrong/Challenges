@@ -1,27 +1,31 @@
 import java.util.ArrayList;
 
 public class CodeJam_BotObj_2011 {
+	String color;
 	int pos = 1;
 	ArrayList<Integer> cmds = new ArrayList<Integer>();
 	
-	public CodeJam_BotObj_2011(){
+	public CodeJam_BotObj_2011(String c){
+		this.color = c;
 	}
 	
-	public void reset(){
-		pos = 1;
-		cmds.clear();
+	public void setColor(String c){
+		color = c;
 	}
 	
-	public int getPos(){
-		return pos;
+	public String getColor(){
+		return color;
 	}
 	
-	public void move(int dist){
-		pos += dist;
+	public void moveTo(int dest){
+		if(dest > pos) pos++;
+		if(dest < pos) pos--;
 	}
 	
 	public void press(){
-		cmds.remove(0);
+		if(!cmds.isEmpty()){
+			cmds.remove(0);
+		}
 	}
 	
 	public void addCmd(int pos){
@@ -29,6 +33,9 @@ public class CodeJam_BotObj_2011 {
 	}
 	
 	public int getNextCmd(){
-		return cmds.get(0);
+		if(!cmds.isEmpty()){
+			return cmds.get(0);
+		}
+		return 0;
 	}
 }
