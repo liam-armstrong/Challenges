@@ -4,13 +4,9 @@ public class CodeJam_BotDriver_2011 {
 	//creates ArrayList to hold bots
 	static ArrayList<CodeJam_BotObj_2011> master = new ArrayList<CodeJam_BotObj_2011>();
 	static ArrayList<ArrayList<String>> masterOrder = new ArrayList<ArrayList<String>>();
-	static int s;
 	public static void main(String[] args) {
 		ParseInput();
-		for(int i = 0; i < masterOrder.get(0).size(); i++){
-			System.out.println(masterOrder.get(0).get(i));
-		}
-//		Run();
+		Run();
 	}
 
 	public static void ParseInput() {
@@ -36,13 +32,29 @@ public class CodeJam_BotDriver_2011 {
 	}
 	
 	public static void Run(){
-		for(int i = 0; i < masterOrder.size(); i++){
+		for(int i = 1; i <= masterOrder.size(); i++){
 			int x = 0;
 			while(!masterOrder.get(i).isEmpty()){
-				if(masterOrder.get(i).get(x).equalsIgnoreCase("o")){
-					
+				if(masterOrder.get(i).get(0).equalsIgnoreCase("o")){
+					Decide(i, true);
+					Decide(i+1, false);
 				}
+				else{
+					Decide(i+1, true);
+					Decide(i, false);
+				}
+				x++;
 			}
+			System.out.println("Case #" + i + ": " + x);
+		}
+	}
+	
+	public static void Decide(int bot, boolean canPress){
+		if(master.get(bot).getNextCmd() == master.get(bot).getPos() && canPress){
+			master.get(bot).press(0);
+		}
+		else if(master.get(bot).getNextCmd() != master.get(bot).getPos()){
+			master.get(bot).moveTowards(master.get(bot).getNextCmd());
 		}
 	}
 }

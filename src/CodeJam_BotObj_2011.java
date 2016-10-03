@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class CodeJam_BotObj_2011 {
-	String color;
-	int pos = 1;
-	ArrayList<Integer> cmds = new ArrayList<Integer>();
+	private String color;
+	private int pos = 1;
+	private ArrayList<Integer> cmds = new ArrayList<Integer>();
 	
 	public CodeJam_BotObj_2011(String c){
 		this.color = c;
@@ -17,14 +17,18 @@ public class CodeJam_BotObj_2011 {
 		return color;
 	}
 	
+	public int getPos(){
+		return pos;
+	}
 	
-	public void moveTo(int dest){
+	public void moveTowards(int dest){
 		if(dest > pos) pos++;
 		if(dest < pos) pos--;
 	}
 	
 	public void press(int cmdNum){
 		if(!cmds.isEmpty()){
+			System.out.println(color + " pressed the button");
 			cmds.remove(0);
 			CodeJam_BotDriver_2011.masterOrder.get(cmdNum).remove(0);
 		}
@@ -38,7 +42,7 @@ public class CodeJam_BotObj_2011 {
 		if(!cmds.isEmpty()){
 			return cmds.get(0);
 		}
-		System.out.println("No Commands Left"););
+//	System.out.println("No Commands Left");
 		return 0;
 	}
 }
