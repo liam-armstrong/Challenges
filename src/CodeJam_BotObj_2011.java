@@ -26,6 +26,7 @@ public class CodeJam_BotObj_2011 {
 		if(dest < pos) pos--;
 	}
 	
+	
 	public void press(int cmdNum){
 		if(!cmds.isEmpty()){
 			System.out.println(color + " pressed the button");

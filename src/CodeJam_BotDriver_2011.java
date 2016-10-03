@@ -31,6 +31,7 @@ public class CodeJam_BotDriver_2011 {
 		in.close();
 	}
 
+	
 	public static void Run() {
 		for (int i = 1; i <= masterOrder.size(); i++) {
 			int x = 0;
