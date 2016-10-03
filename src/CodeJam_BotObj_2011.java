@@ -42,7 +42,6 @@ public class CodeJam_BotObj_2011 {
 		if(!cmds.isEmpty()){
 			return cmds.get(0);
 		}
-//	System.out.println("No Commands Left");
 		return 0;
 	}
 }
