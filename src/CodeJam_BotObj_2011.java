@@ -26,12 +26,10 @@ public class CodeJam_BotObj_2011 {
 		if(dest < pos) pos--;
 	}
 	
-	
 	public void press(int cmdNum){
 		if(!cmds.isEmpty()){
-			System.out.println(color + " pressed the button");
 			cmds.remove(0);
-			CodeJam_BotDriver_2011.masterOrder.get(cmdNum).remove(0);
+			CodeJam_BotDriver_2011.cmdColors.get(cmdNum).remove(0);
 		}
 	}
 	
