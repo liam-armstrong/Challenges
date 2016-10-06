@@ -10,7 +10,7 @@ public class CodeJam_Magicka_2011 {
 	public static void ParseInput() {
 		Scanner in = new Scanner(System.in);
 		for(int i = 0; i < in.nextInt(); i++){
-			elements.add(new ArrayList);
+			elements.add(new ArrayList<String>());
 			for(int j = 0; j < in.nextInt(); j++){
 			}
 		}
