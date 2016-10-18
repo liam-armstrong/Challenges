@@ -38,7 +38,7 @@ public class CodeJam_Magicka_2011 {
 			}
 			
 			for (int c = 0; c < elements.get(i).size(); c++) {
-				System.out.println(elements.get(i).get(c));
+				System.out.print(elements.get(i).get(c));
 			}
 			
 		}
