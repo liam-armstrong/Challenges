@@ -5,7 +5,7 @@ public class CodeJam_Magicka_2011 {
 	static ArrayList<ArrayList<Character>> elements = new ArrayList<ArrayList<Character>>();
 	static ArrayList<ArrayList<Character>> combination = new ArrayList<ArrayList<Character>>();
 	static ArrayList<ArrayList<Character>> oppositions = new ArrayList<ArrayList<Character>>();
-
+	static ArrayList<Character> output = new ArrayList<Character>();
 	public static void main(String[] args) {
 		ParseInput();
 	}
@@ -44,5 +44,34 @@ public class CodeJam_Magicka_2011 {
 		}
 		in.close();
 	}
-
+	
+	public static void invoke(){
+		for(int i = 0; i < elements.size(); i++){
+			for(int j = 0; j < elements.get(i).size(); j++){
+				
+			}
+		}
+	}
+	
+	public static char compare(char orig, char append, ArrayList<Character> list, int grpSize){
+		for(int i = grpSize; i < list.size()/grpSize; i++){
+			
+			if(orig == list.get(i) && append == list.get(i + 1)){
+				
+			}
+			
+		}
+		return 0;
+	}
+	
+	public static char compareOppose(char orig, char append, ArrayList<Character> list, int grpSize){
+		for(int i = grpSize; i < list.size()/grpSize; i++){
+			
+			if(orig == list.get(i) && append == list.get(i + 1)){
+				
+			}
+			
+		}
+		return 0;
+	}
 }
